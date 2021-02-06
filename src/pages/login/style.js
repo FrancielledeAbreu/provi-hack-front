@@ -13,8 +13,9 @@ export const Container = styled.div`
   }
 `;
 export const Image = styled.img`
-  height: 390px;
-  width: 400px;
+  width: 380x;
+  height: 290px;
+  border-radius: 10px;
 `;
 
 export const NewInput = styled(Input)`

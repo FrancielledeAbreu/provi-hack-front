@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Menu, Layout } from "antd";
 import { Form, Button, Input } from "antd";
 import { Link, useHistory } from "react-router-dom";
-import Hack from "../../assets/images/hack.png";
+import LoginImage from "../../assets/images/login.jpg";
 import { Container, Image, NewInput } from "./style";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -57,7 +57,7 @@ const Login = () => {
         </Header>
       </Layout>
       <Container>
-        <Image src={Hack} alt="hackathon" />
+        <Image src={LoginImage} alt="hackathon" />
         <div>
           <Form
             {...layout}
@@ -70,7 +70,7 @@ const Login = () => {
               label="Email"
               name="email"
               rules={[
-                { required: true, message: "Por favor insira seu username!" },
+                { required: true, message: "Por favor insira seu email!" },
               ]}
             >
               <NewInput />
@@ -80,7 +80,7 @@ const Login = () => {
               label="Senha"
               name="password"
               rules={[
-                { required: true, message: "Por favor insira sua sennha!" },
+                { required: true, message: "Por favor insira sua senha!" },
               ]}
             >
               <Input.Password style={{ backgroundColor: "#C4C4C4" }} />

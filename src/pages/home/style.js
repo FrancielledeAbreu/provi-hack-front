@@ -40,6 +40,7 @@ export const Description = styled.p`
 export const Image = styled.img`
   width: 380x;
   height: 290px;
+  border-radius: 10px;
 `;
 
 export const LogoHW = styled.img`

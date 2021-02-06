@@ -18,6 +18,9 @@ export const Header = styled.div`
   }
 `;
 
+export const Challanges = styled.div`
+  padding-top: 2%;
+`;
 export const NewButton = styled(Button)`
   margin-left: 10px;
 `;
