@@ -7,8 +7,7 @@ import { Container, Image, NewInput } from "./style";
 
 import { useDispatch, useSelector } from "react-redux";
 import { isValidUser } from "../../redux/actions/login";
-import { Alert } from "antd";
-
+import { notification } from "antd";
 const Login = () => {
   const dispatch = useDispatch();
   const [error, setError] = useState(false);
@@ -28,6 +27,11 @@ const Login = () => {
     console.log(user.validLogin, "user", error, "error");
     if (user.validLogin.length === 0) {
       setError(true);
+      notification.error({
+        message: "Login inválido",
+      });
+    } else {
+      setError(false);
     }
   };
 
@@ -38,14 +42,6 @@ const Login = () => {
 
   return (
     <>
-      {error && (
-        <Alert
-          message="Error"
-          description="Login inválido."
-          type="error"
-          showIcon
-        />
-      )}
       <Layout>
         <Header style={{ padding: "0" }} className="header App-header">
           <Menu
