@@ -7,6 +7,7 @@ import { Container, Image, NewInput } from "./style";
 
 import { useDispatch, useSelector } from "react-redux";
 import { isValidUser } from "../../redux/actions/login";
+import { Alert } from "antd";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,8 @@ const Login = () => {
 
   const onFinish = (values) => {
     dispatch(isValidUser(values));
-    if (user.validLogin && user.validLogin.length === []) {
+    console.log(user.validLogin, "user", error, "error");
+    if (user.validLogin.length === 0) {
       setError(true);
     }
   };
@@ -33,9 +35,17 @@ const Login = () => {
     console.log("Failed:", errorInfo);
   };
   const { Header } = Layout;
-  console.log(user.validLogin, "user", error, "error");
+
   return (
     <>
+      {error && (
+        <Alert
+          message="Error"
+          description="Login inválido."
+          type="error"
+          showIcon
+        />
+      )}
       <Layout>
         <Header style={{ padding: "0" }} className="header App-header">
           <Menu
@@ -85,7 +95,6 @@ const Login = () => {
               name="remember"
               valuePropName="checked"
             >
-              {error && <p>Email inválido</p>}
               <Link>Esqueci a senha</Link>
             </Form.Item>
 
