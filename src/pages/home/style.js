@@ -28,12 +28,23 @@ export const Content = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding-top: 10%;
+
   padding-left: 10%;
 `;
 export const Description = styled.p`
-  width: 60%;
+  width: 40%;
+  font-size: 20px;
   text-align: center;
+  margin-right: 100px;
+`;
+export const Image = styled.img`
+  width: 380x;
+  height: 290px;
 `;
 
-export const Image = styled.img``;
+export const LogoHW = styled.img`
+  width: 300px;
+  height: 300px;
+  margin-top: -100px;
+  margin-left: 58px;
+`;

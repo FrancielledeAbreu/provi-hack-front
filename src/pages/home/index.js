@@ -1,5 +1,7 @@
 import React from "react";
 import Hack from "../../assets/images/hack.png";
+import Logo from "../../assets/images/logo.png";
+import ImageHome from "../../assets/images/mulherHome.jpeg";
 
 import { Link } from "react-router-dom";
 import {
@@ -10,13 +12,14 @@ import {
   Content,
   Description,
   Image,
+  LogoHW,
 } from "./style";
 
 const Home = () => {
   return (
     <Container>
       <Nav>
-        Logo
+        <LogoHW src={Logo} />
         <Buttons>
           <NewButton>Cadastre-se</NewButton>
           <NewButton type="primary">
@@ -25,7 +28,7 @@ const Home = () => {
         </Buttons>
       </Nav>
       <Content>
-        <Image src={Hack} alt="hackathon" />
+        <Image src={ImageHome} alt="hackathon" />
         {/* <img
           src={BackImag}
           alt=""
@@ -38,11 +41,8 @@ const Home = () => {
           }}  />*/}
 
         <Description>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries,
+          No HACKHAWORK, você escolhe o desafio, acumula experiência e ainda
+          pode aprender muito mais com as empresas parceiras!
         </Description>
       </Content>
     </Container>
