@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Menu, Layout } from "antd";
 import { Form, Button, Input } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Hack from "../../assets/images/hack.png";
 import { Container, Image, NewInput } from "./style";
 
@@ -12,6 +12,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const [error, setError] = useState(false);
   const user = useSelector((state) => state);
+  const history = useHistory();
 
   const layout = {
     labelCol: { span: 8 },
@@ -31,7 +32,7 @@ const Login = () => {
         message: "Login inválido",
       });
     } else {
-      setError(false);
+      history.push("/desafios");
     }
   };
 
