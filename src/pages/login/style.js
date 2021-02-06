@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Input } from "antd";
 
 export const Container = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap");
@@ -14,4 +15,8 @@ export const Container = styled.div`
 export const Image = styled.img`
   height: 390px;
   width: 400px;
+`;
+
+export const NewInput = styled(Input)`
+  background-color: #c4c4c4;
 `;

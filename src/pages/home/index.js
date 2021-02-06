@@ -1,5 +1,6 @@
 import React from "react";
 import Hack from "../../assets/images/hack.png";
+
 import { Link } from "react-router-dom";
 import {
   Container,
@@ -25,6 +26,17 @@ const Home = () => {
       </Nav>
       <Content>
         <Image src={Hack} alt="hackathon" />
+        {/* <img
+          src={BackImag}
+          alt=""
+          style={{
+            position: "absolute",
+            width: "444.87px",
+            height: " 620.72px",
+            left: "451.34px",
+            top: "339.76px",
+          }}  />*/}
+
         <Description>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever

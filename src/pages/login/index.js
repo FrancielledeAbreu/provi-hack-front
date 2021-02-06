@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Menu, Layout } from "antd";
-import { Form, Input, Button, Checkbox } from "antd";
+import { Form, Button, Input } from "antd";
 import { Link } from "react-router-dom";
 import Hack from "../../assets/images/hack.png";
-import { Container, Image } from "./style";
+import { Container, Image, NewInput } from "./style";
+
+import { useDispatch, useSelector } from "react-redux";
+import { isValidUser } from "../../redux/actions/login";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const [error, setError] = useState(false);
+  const user = useSelector((state) => state);
+
   const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
@@ -16,14 +23,17 @@ const Login = () => {
   };
 
   const onFinish = (values) => {
-    console.log("Success:", values);
+    dispatch(isValidUser(values));
+    if (user.validLogin && user.validLogin.length === []) {
+      setError(true);
+    }
   };
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
   const { Header } = Layout;
-
+  console.log(user.validLogin, "user", error, "error");
   return (
     <>
       <Layout>
@@ -50,13 +60,13 @@ const Login = () => {
             onFinishFailed={onFinishFailed}
           >
             <Form.Item
-              label="Username"
-              name="username"
+              label="Email"
+              name="email"
               rules={[
                 { required: true, message: "Por favor insira seu username!" },
               ]}
             >
-              <Input />
+              <NewInput />
             </Form.Item>
 
             <Form.Item
@@ -66,7 +76,7 @@ const Login = () => {
                 { required: true, message: "Por favor insira sua sennha!" },
               ]}
             >
-              <Input.Password />
+              <Input.Password style={{ backgroundColor: "#C4C4C4" }} />
             </Form.Item>
 
             <Form.Item
@@ -75,7 +85,7 @@ const Login = () => {
               name="remember"
               valuePropName="checked"
             >
-              {/* <Checkbox>Relembrar me</Checkbox> */}
+              {error && <p>Email inválido</p>}
               <Link>Esqueci a senha</Link>
             </Form.Item>
 
