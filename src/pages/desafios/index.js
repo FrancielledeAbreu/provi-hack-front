@@ -1,45 +1,48 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Avatar } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
 import { Input, Button } from "antd";
-import { Header, Nav, NewButton, Challanges } from "./style";
+import { Header, Nav, NewButton, Challenges, Message } from "./style";
+import PopUp from "../../components/popUp";
+import CardChallenge from "../../components/challenge";
+import { Forum, Eventos } from "./helper";
+import {
+  challengesRequest,
+  challengesRequestTeam,
+  challengesRequestSingle,
+  challengesRequestFilterName,
+} from "../../redux/actions/challenges";
 
-import CardChalenge from "../../components/challenge";
-
-const data = [
-  {
-    name: "Inteligência artificial",
-    description: "description",
-    level: "medium",
-    challenges_type: "team",
-    status: "status ",
-    image:
-      "https://image.freepik.com/psd-gratuitas/maquete-de-logotipo-preto-gravado_125540-223.jpg",
-  },
-  {
-    name: "Ajudando pequenos empreendedores",
-    description: "description",
-    level: "easy",
-    challenges_type: "single",
-    status: "status ",
-    image:
-      "https://image.freepik.com/psd-gratuitas/maquete-de-logotipo-preto-gravado_125540-223.jpg",
-  },
-  {
-    name: "Turismo na pandemia do Covid-19",
-    description: "description",
-    level: "hard",
-    challenges_type: "team",
-    status: "status ",
-    image:
-      "https://image.freepik.com/psd-gratuitas/maquete-de-logotipo-preto-gravado_125540-223.jpg",
-  },
-];
+import { useDispatch, useSelector } from "react-redux";
 
 const Desafios = () => {
-  const onSearch = (value) => console.log(value);
+  const dispatch = useDispatch();
+
+  const challenges = useSelector((state) => state.challengeReducer);
+
   const { Search } = Input;
+
+  useEffect(() => {
+    dispatch(challengesRequest());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleChallengesAll = () => {
+    dispatch(challengesRequest());
+  };
+
+  const handleFilterTeam = () => {
+    dispatch(challengesRequestTeam());
+  };
+
+  const handleFilterSingle = () => {
+    dispatch(challengesRequestSingle());
+  };
+
+  const onSearch = (value) => {
+    dispatch(challengesRequestFilterName(value));
+  };
   return (
     <div>
       <Header>
@@ -50,8 +53,12 @@ const Desafios = () => {
         </div>
       </Header>
       <Nav>
-        <Button type="primary">Desafio em grupo</Button>
-        <Button type="primary">Desafio individual</Button>
+        <Button onClick={handleFilterTeam} type="primary">
+          Desafio em grupo
+        </Button>
+        <Button onClick={handleFilterSingle} type="primary">
+          Desafio individual
+        </Button>
         <Search
           placeholder="buscar um desafio"
           onSearch={onSearch}
@@ -59,22 +66,38 @@ const Desafios = () => {
           style={{ width: "30%" }}
         />
       </Nav>
-      <Challanges>
-        {data.map(({ name, challenges_type, image, level }, index) => (
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.8 }}
-            style={{ padding: "2%", marginLeft: "8%" }}
-          >
-            <CardChalenge
-              name={name}
-              challenges_type={challenges_type}
-              image={image}
-              level={level}
-            />
-          </motion.div>
-        ))}
-      </Challanges>
+      <Challenges>
+        <div>
+          {challenges.length > 0 ? (
+            challenges.map(({ name, challenges_type, image, level }, index) => (
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.8 }}
+                style={{ padding: "2%", marginLeft: "8%" }}
+              >
+                <CardChallenge
+                  name={name}
+                  challenges_type={challenges_type}
+                  image={image}
+                  level={level}
+                />
+              </motion.div>
+            ))
+          ) : (
+            <Message>
+              <div>Não existe desafio para este filtro</div>
+              <Button onClick={handleChallengesAll} type="primary">
+                Todos Desafios
+              </Button>
+            </Message>
+          )}
+        </div>
+
+        <div>
+          <PopUp object={Forum} />
+          <PopUp object={Eventos} />
+        </div>
+      </Challenges>
     </div>
   );
 };

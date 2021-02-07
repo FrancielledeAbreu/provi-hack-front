@@ -8,7 +8,6 @@ const login = (data) => {
 };
 
 export const isValidUser = (values) => (dispatch) => {
-  console.log(values.email, values.password, "dsgadfghadg");
   api
     .get(
       `login?filter[email]=${values.email}&filter[password]=${values.password}`

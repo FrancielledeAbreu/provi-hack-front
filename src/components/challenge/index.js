@@ -6,7 +6,7 @@ import ImageTeam from "../../assets/images/team.png";
 import ImageSingle from "../../assets/images/single.png";
 import { Img, Container } from "./style";
 
-const CardChalenge = ({ name, level, challenges_type, image }) => {
+const CardChallenge = ({ name, level, challenges_type, image }) => {
   let imageUrl = "";
   switch (level) {
     case "easy":
@@ -36,4 +36,4 @@ const CardChalenge = ({ name, level, challenges_type, image }) => {
   );
 };
 
-export default CardChalenge;
+export default CardChallenge;

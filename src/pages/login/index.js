@@ -25,9 +25,10 @@ const Login = () => {
 
   const onFinish = (values) => {
     dispatch(isValidUser(values));
-    console.log(user.validLogin, "user", error, "error");
+
     if (user.validLogin.length === 0) {
       setError(true);
+      console.log(error);
       notification.error({
         message: "Login inválido",
       });
