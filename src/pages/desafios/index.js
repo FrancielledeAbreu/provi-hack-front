@@ -1,16 +1,10 @@
 import React, { useEffect } from "react";
-import { Avatar } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
-import { Input, Button } from "antd";
-import {
-  Header,
-  Nav,
-  NewButton,
-  Challenges,
-  Message,
-  ContainerPopup,
-} from "./style";
+import { Input, Button, Avatar } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+
+//locals
 import PopUp from "../../components/popUp";
 import CardChallenge from "../../components/challenge";
 import { Forum, Eventos } from "./helper";
@@ -21,13 +15,19 @@ import {
   challengesRequestFilterName,
 } from "../../redux/actions/challenges";
 
-import { useDispatch, useSelector } from "react-redux";
+//style
+import {
+  Header,
+  Nav,
+  NewButton,
+  Challenges,
+  Message,
+  ContainerPopup,
+} from "./style";
 
 const Desafios = () => {
   const dispatch = useDispatch();
-
   const challenges = useSelector((state) => state.challengeReducer);
-
   const { Search } = Input;
 
   useEffect(() => {
@@ -50,6 +50,7 @@ const Desafios = () => {
   const onSearch = (value) => {
     dispatch(challengesRequestFilterName(value));
   };
+
   return (
     <div>
       <Header>
@@ -99,7 +100,6 @@ const Desafios = () => {
             </Message>
           )}
         </div>
-
         <ContainerPopup>
           <PopUp object={Forum} />
           <PopUp object={Eventos} />

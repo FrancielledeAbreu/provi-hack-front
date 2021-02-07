@@ -4,6 +4,7 @@ import { Button } from "antd";
 export const Main = styled.div`
   margin: 0;
 `;
+
 export const Header = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap");
   font-family: "Roboto", sans-serif;
@@ -27,9 +28,11 @@ export const Challenges = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
 `;
+
 export const NewButton = styled(Button)`
   margin-left: 10px;
 `;
+
 export const Nav = styled.div`
   width: 80%;
   display: flex;
@@ -40,6 +43,7 @@ export const Nav = styled.div`
   padding: 1%;
   margin-left: 10%;
 `;
+
 export const Message = styled.div`
   font-size: 25px;
   text-align: center;

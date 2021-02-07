@@ -1,8 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+//locals
 import Logo from "../../assets/images/logo.png";
 import ImageHome from "../../assets/images/mulherHome.jpeg";
 
-import { Link } from "react-router-dom";
+//style
 import {
   Container,
   Nav,

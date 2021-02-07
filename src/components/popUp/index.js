@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Description } from "./style";
 import { motion } from "framer-motion";
+
 const PopUp = ({ object }) => {
   return (
     <Container>

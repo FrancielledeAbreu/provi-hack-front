@@ -1,4 +1,6 @@
 import React from "react";
+
+//locals
 import Hard from "../../assets/images/hard.png";
 import Easy from "../../assets/images/easy.png";
 import Medium from "../../assets/images/medium.png";

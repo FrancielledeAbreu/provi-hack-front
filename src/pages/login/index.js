@@ -1,18 +1,21 @@
 import React, { useState } from "react";
-import { Menu, Layout } from "antd";
-import { Form, Button, Input } from "antd";
+import { Form, Button, Input, notification, Menu, Layout } from "antd";
 import { Link, useHistory } from "react-router-dom";
-import LoginImage from "../../assets/images/login.jpg";
-import { Container, Image, NewInput } from "./style";
-
 import { useDispatch, useSelector } from "react-redux";
+
+//locals
+import LoginImage from "../../assets/images/login.jpg";
 import { isValidUser } from "../../redux/actions/login";
-import { notification } from "antd";
+
+//style
+import { Container, Image } from "./style";
+
 const Login = () => {
-  const dispatch = useDispatch();
   const [error, setError] = useState(false);
+  const dispatch = useDispatch();
   const user = useSelector((state) => state);
   const history = useHistory();
+  const { Header } = Layout;
 
   const layout = {
     labelCol: { span: 8 },
@@ -42,7 +45,6 @@ const Login = () => {
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
-  const { Header } = Layout;
 
   return (
     <>
@@ -76,7 +78,7 @@ const Login = () => {
                 { required: true, message: "Por favor insira seu email!" },
               ]}
             >
-              <NewInput />
+              <Input />
             </Form.Item>
 
             <Form.Item
@@ -86,7 +88,7 @@ const Login = () => {
                 { required: true, message: "Por favor insira sua senha!" },
               ]}
             >
-              <Input.Password style={{ backgroundColor: "#C4C4C4" }} />
+              <Input.Password />
             </Form.Item>
 
             <Form.Item
