@@ -3,7 +3,14 @@ import { Avatar } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
 import { Input, Button } from "antd";
-import { Header, Nav, NewButton, Challenges, Message } from "./style";
+import {
+  Header,
+  Nav,
+  NewButton,
+  Challenges,
+  Message,
+  ContainerPopup,
+} from "./style";
 import PopUp from "../../components/popUp";
 import CardChallenge from "../../components/challenge";
 import { Forum, Eventos } from "./helper";
@@ -93,10 +100,10 @@ const Desafios = () => {
           )}
         </div>
 
-        <div>
+        <ContainerPopup>
           <PopUp object={Forum} />
           <PopUp object={Eventos} />
-        </div>
+        </ContainerPopup>
       </Challenges>
     </div>
   );

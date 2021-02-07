@@ -29,9 +29,11 @@ const Login = () => {
     if (user.validLogin.length === 0) {
       setError(true);
       console.log(error);
-      notification.error({
-        message: "Login inválido",
-      });
+      setTimeout(() => {
+        notification.error({
+          message: "Login inválido",
+        });
+      }, 3000);
     } else {
       history.push("/desafios");
     }

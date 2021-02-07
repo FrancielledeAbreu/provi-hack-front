@@ -52,3 +52,10 @@ export const Message = styled.div`
     padding: 15%;
   }
 `;
+
+export const ContainerPopup = styled.div`
+  position: -webkit-sticky;
+  position: sticky;
+  height: 50%;
+  top: 40px;
+`;

@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   padding: 5%;
-  position: -webkit-sticky;
-  position: sticky;
   h1 {
     color: #1890ff;
   }
