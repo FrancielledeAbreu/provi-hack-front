@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Input, Button } from "antd";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 //locals
 import PopUp from "../../components/popUp";
@@ -84,20 +85,22 @@ const Desafios = () => {
       <Challenges>
         <div>
           {challenges.length > 0 ? (
-            challenges.map(({ name, challenges_type, image, level }, index) => (
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.8 }}
-                style={{ padding: "2%", marginLeft: "8%" }}
-              >
-                <CardChallenge
-                  name={name}
-                  challenges_type={challenges_type}
-                  image={image}
-                  level={level}
-                />
-              </motion.div>
-            ))
+            challenges.map(
+              ({ name, challenges_type, image, level, id }, index) => (
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.8 }}
+                  style={{ padding: "2%", marginLeft: "8%" }}
+                >
+                  <CardChallenge
+                    name={<Link to={`/challenge-details/${id}`}>{name}</Link>}
+                    challenges_type={challenges_type}
+                    image={image}
+                    level={level}
+                  />
+                </motion.div>
+              )
+            )
           ) : (
             <Message>
               <div>Não existe desafio para este filtro</div>
