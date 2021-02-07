@@ -86,5 +86,14 @@ yarn test
 
 ### Primeira Versão:
 
-- Foi realizado o deploy do front no [Vercel](https://vercel.com/)
-- https://hackawork.vercel.app/
+- Foi realizado o deploy do front no Vercel [Vercel](https://vercel.com/)
+- Endereço da aplicação: https://hackawork.vercel.app/
+
+#### Dados login App:
+
+```
+  Email: novousuario@gmail.com
+  Senha: @123456
+```
+
+- Obs: A autenticação do login está sendo realizada por meio de uma requisição get, portanto, pode haver um delay ao clicar em entrar na tela de login, sendo necessário mais de um clique no botão entrar. Situação priorizada para melhoria nas próximas versões.

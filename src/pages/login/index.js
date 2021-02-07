@@ -4,8 +4,9 @@ import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 //locals
-import LoginImage from "../../assets/images/login.jpg";
+
 import { isValidUser } from "../../redux/actions/login";
+import Logo from "../../assets/images/hw.png";
 
 //style
 import { Container, Image } from "./style";
@@ -62,7 +63,7 @@ const Login = () => {
         </Header>
       </Layout>
       <Container>
-        <Image src={LoginImage} alt="hackathon" />
+        <Image src={Logo} alt="hackathon" />
         <div>
           <Form
             {...layout}
