@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardChallenge Test renders correctly 1`] = `
+<div
+  className="sc-gsTCUz gdfIMh"
+>
+  <img
+    alt=""
+    className="sc-bdfBwQ hcwlGI"
+    src="https://image.freepik.com/fotos-gratis/ilustracao-da-palavra-da-imagem_93826-815.jpg"
+  />
+  <img
+    alt=""
+    className="sc-bdfBwQ hcwlGI"
+    src="medium.png"
+  />
+  <span>
+    Front-end
+  </span>
+  <img
+    alt=""
+    className="sc-bdfBwQ hcwlGI"
+    src="single.png"
+  />
+</div>
+`;

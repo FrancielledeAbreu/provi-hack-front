@@ -19,7 +19,7 @@ import {
 
 const Home = () => {
   return (
-    <Container>
+    <Container data-testid="Challenges">
       <Nav>
         <LogoHW src={Logo} />
         <Buttons>

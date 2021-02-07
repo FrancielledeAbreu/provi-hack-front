@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopUp Test renders correctly 1`] = `
+<div
+  className="sc-bdfBwQ fBhDya"
+>
+  <h1>
+    Fórum
+  </h1>
+  <div
+    style={Object {}}
+  >
+    <div
+      className="sc-gsTCUz dLNejD"
+    >
+      . O que é HackaWork
+    </div>
+  </div>
+  <div
+    style={Object {}}
+  >
+    <div
+      className="sc-gsTCUz dLNejD"
+    >
+      . Empresas parceiras
+    </div>
+  </div>
+  <div
+    style={Object {}}
+  >
+    <div
+      className="sc-gsTCUz dLNejD"
+    >
+      . Como se portar na entrevista?
+    </div>
+  </div>
+  <div
+    style={Object {}}
+  >
+    <div
+      className="sc-gsTCUz dLNejD"
+    >
+      . Dicas valiosas
+    </div>
+  </div>
+</div>
+`;

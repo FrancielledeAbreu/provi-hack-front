@@ -52,7 +52,7 @@ const Desafios = () => {
   };
 
   return (
-    <div>
+    <div data-testid="Challenges">
       <Header>
         <NewButton>sou uma empresa parceira</NewButton>
         <div>
