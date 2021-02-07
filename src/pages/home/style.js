@@ -20,7 +20,8 @@ export const NewButton = styled(Button)`
 export const Nav = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  margin-bottom: 3%;
 `;
 
 export const Content = styled.div`
@@ -38,8 +39,8 @@ export const Description = styled.p`
   margin-right: 100px;
 `;
 export const Image = styled.img`
-  width: 380x;
-  height: 290px;
+  width: 480x;
+  height: 390px;
   border-radius: 10px;
 `;
 

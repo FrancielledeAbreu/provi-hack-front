@@ -80,7 +80,7 @@ yarn test
 
 ### Back End:
 
-- Essa aplicação utilizou a senguinte [API](https://github.com/FrancielledeAbreu/provi-hack-woman), também desenvolvida por nós.
+- Essa aplicação utilizou a seguinte [API](https://github.com/FrancielledeAbreu/provi-hack-woman), também desenvolvida por nós.
 
 - Foi realizado deploy da API no Heroku
 

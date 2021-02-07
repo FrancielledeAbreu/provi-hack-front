@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
-import { UserOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
-import { Input, Button, Avatar } from "antd";
+import { Input, Button } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 
 //locals
 import PopUp from "../../components/popUp";
 import CardChallenge from "../../components/challenge";
 import { Forum, Eventos } from "./helper";
+import Avatar from "../../assets/images/avatar.jpeg";
 import {
   challengesRequest,
   challengesRequestTeam,
@@ -17,12 +17,14 @@ import {
 
 //style
 import {
+  Main,
   Header,
   Nav,
-  NewButton,
   Challenges,
   Message,
   ContainerPopup,
+  Title,
+  UserImage,
 } from "./style";
 
 const Desafios = () => {
@@ -52,12 +54,11 @@ const Desafios = () => {
   };
 
   return (
-    <div data-testid="Challenges">
+    <Main data-testid="Challenges">
       <Header>
-        <NewButton>sou uma empresa parceira</NewButton>
         <div>
           <span>Meus desafios</span>
-          <Avatar size={64} icon={<UserOutlined />} />
+          <UserImage src={Avatar} />
         </div>
       </Header>
       <Nav>
@@ -74,6 +75,12 @@ const Desafios = () => {
           style={{ width: "30%" }}
         />
       </Nav>
+      <Title>
+        <span>Empresa</span>
+        <span>Nível de dificuldade</span>
+        <span> Título Desafio</span>
+        <span> Grupo ou individual</span>
+      </Title>
       <Challenges>
         <div>
           {challenges.length > 0 ? (
@@ -105,7 +112,7 @@ const Desafios = () => {
           <PopUp object={Eventos} />
         </ContainerPopup>
       </Challenges>
-    </div>
+    </Main>
   );
 };
 
